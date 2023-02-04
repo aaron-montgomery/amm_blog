@@ -13,5 +13,8 @@
   },
   "posts/2022-07-10-monty-hall/index.qmd": {
     "index.html": "28e0635d"
+  },
+  "testfile.md": {
+    "testfile.html": "c740647a"
   }
 }
