@@ -1,0 +1,20 @@
+project:
+  type: website
+  output-dir: docs
+
+website:
+  title: "AMM"
+  navbar:
+    right:
+      - about.qmd
+      - icon: github
+        href: https://github.com/
+      - icon: linkedin
+        href: https://www.linkedin.com/in/aaron-montgomery-6b17421b1/        
+format:
+  html:
+    theme: cosmo
+    css: styles.css
+
+
+

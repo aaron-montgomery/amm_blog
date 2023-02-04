@@ -1,0 +1,27 @@
+---
+title: "About"
+image: profile.jpg
+about:
+  template: solana
+  links:
+    - icon: linkedin
+      text: LinkedIn
+      href: https://www.linkedin.com/in/aaron-montgomery-6b17421b1/
+    - icon: github
+      text: Github
+      href: https://github.com
+
+---
+
+Hi! I’m Aaron Montgomery, an Associate Professor at 
+[Baldwin Wallace University](https://www.bw.edu/). I received a PhD in 
+Mathematics (specializing in Probability Theory) in 2013 at the University of 
+Oregon under the direction of [David Levin](https://darkwing.uoregon.edu/~dlevin/).
+Since then, I have been a member of the BW Mathematics and Statistics faculty, 
+and more recently I have become the coordinator of the new 
+[Data Science](https://www.bw.edu/academics/undergraduate/data-science/) and
+[Data Analytics](https://www.bw.edu/academics/undergraduate/data-analytics/)
+programs.
+
+I am always open to collaborating on interesting statistical or data-oriented 
+projects! You can reach me at `amontgom` (atsymbol) `bw.edu`.

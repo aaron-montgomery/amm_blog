@@ -1,0 +1,65 @@
+[
+  {
+    "objectID": "index.html",
+    "href": "index.html",
+    "title": "Blog",
+    "section": "",
+    "text": "This blog is an assorted collection of notes on probability, statistics, data, and coding.\n\n\n\n\n\n\n\n\n\n  \n\n\n\n\nPost With Code\n\n\n\n\n\n\n\nnews\n\n\ncode\n\n\nanalysis\n\n\n\n\n\n\n\n\n\n\n\nJan 26, 2023\n\n\nHarlow Malloc\n\n\n\n\n\n\n  \n\n\n\n\nWelcome To My Blog\n\n\n\n\n\n\n\nnews\n\n\n\n\n\n\n\n\n\n\n\nJan 23, 2023\n\n\nTristan O’Malley\n\n\n\n\n\n\n  \n\n\n\n\nLet’s Make a Deal!\n\n\n\n\n\n\n\nprobability\n\n\nsimulation\n\n\nmonte-carlo\n\n\nmonty-hall\n\n\ncounterintuitive\n\n\n\n\nMonty Hall meets Monte Carlo\n\n\n\n\n\n\nJul 14, 2022\n\n\nAaron Montgomery\n\n\n\n\n\n\nNo matching items"
+  },
+  {
+    "objectID": "about.html",
+    "href": "about.html",
+    "title": "About",
+    "section": "",
+    "text": "Hi! I’m Aaron Montgomery, an Associate Professor at Baldwin Wallace University. I received a PhD in Mathematics (specializing in Probability Theory) in 2013 at the University of Oregon under the direction of David Levin. Since then, I have been a member of the BW Mathematics and Statistics faculty, and more recently I have become the coordinator of the new Data Science and Data Analytics programs.\nI am always open to collaborating on interesting statistical or data-oriented projects! You can reach me at amontgom (atsymbol) bw.edu."
+  },
+  {
+    "objectID": "posts/2022-07-10-monty-hall/index.html",
+    "href": "posts/2022-07-10-monty-hall/index.html",
+    "title": "Let’s Make a Deal!",
+    "section": "",
+    "text": "Photo by Sebastian Herrmann on Unsplash"
+  },
+  {
+    "objectID": "posts/2022-07-10-monty-hall/index.html#the-incorrect-answer",
+    "href": "posts/2022-07-10-monty-hall/index.html#the-incorrect-answer",
+    "title": "Let’s Make a Deal!",
+    "section": "The Incorrect Answer",
+    "text": "The Incorrect Answer\nI was first exposed to this problem in college when a friend posed the question to me as a brain teaser to at a cafeteria table. I gave the only sensible answer, which was to say that since you had two doors, getting the prize was a 50/50 proposition no matter what you chose. I was, of course, dead wrong.\nFor years, I was slightly embarrassed about this. Not too embarrassed, mind you – after all, I’m wrong all the time. But this one stung because my friend was on my home turf; at this point in my life, I was pretty sure I was going to try to pursue a PhD in Mathematics and I suspected I might gravitate to the field of Probability Theory. Just like that, I whiffed on a probability question in a semi-public forum.\nMy shame was lessened over the years when I learned that if nothing else, I wasn’t alone. When Marilyn Vos Savant gave a correct solution to the problem in a 1990 issue of Parade, she received a truckload of letters, many from professional mathematicians, telling her how wrong she was. (She wasn’t wrong, which certainly didn’t help the outrageous rudeness of some of those letters.) In his book Which Door Has the Cadillac: Adventures of a Real Life Mathematician, Andrew Vazsonyi recalls giving the same incorrect “obvious” answer to the problem on his first encounter; perhaps more shockingly, he details an account of discussing the problem with Paul Erdös, who also got the problem wrong and became increasingly irate about it until he was eventually shown a simulation proving what the right answer should be."
+  },
+  {
+    "objectID": "posts/2022-07-10-monty-hall/index.html#the-correct-answer",
+    "href": "posts/2022-07-10-monty-hall/index.html#the-correct-answer",
+    "title": "Let’s Make a Deal!",
+    "section": "The Correct Answer",
+    "text": "The Correct Answer\nThat right answer is that switching is better. Indeed, staying with your original choice will grant you a \\(1/3\\) chance of winning, and switching will grant a \\(2/3\\) chance of winning. The key detail, of course, is Monty’s knowledge of the prize location and his choice of exactly how to reveal what he knows. There are many ways to see why this is true; the Wikipedia entry for the Monty Hall problem gives many different explanations of many different flavors (and even criticisms of those same explanations). These explanations are great, but to those who aren’t accustomed to long mathematical arguments, they might be less than convincing.\nThe first explanation of the solution in the Wikipedia article states:\n\nWhen the player first makes their choice, there is a \\(2/3\\) chance that the car is behind one of the doors not chosen. This probability does not change after the host reveals a goat behind one of the unchosen doors.\n\nThis explanation never quite sat right with me. Sasha Volokh expressed my vague concern quite well:\n\nFirst, it’s clear that any explanation that says something like “the probability of door 1 was 1/3, and nothing can change that…” is automatically fishy: probabilities are expressions of our ignorance about the world, and new information can change the extent of our ignorance.\n\nThis is a case where simulations can do us some good."
+  },
+  {
+    "objectID": "posts/2022-07-10-monty-hall/index.html#simulations",
+    "href": "posts/2022-07-10-monty-hall/index.html#simulations",
+    "title": "Let’s Make a Deal!",
+    "section": "Simulations",
+    "text": "Simulations\nWe’ll write Monte Carlo simulations in R to see that by sticking with our original answer, the probability of winning is indeed \\(1/3\\). We will write a function that simulates one full round of the game; then, we’ll replicate() the function many times to determine the probability of winning. Our strategy will be to simulate a round of the full game many times and keep track of how often the game results in a win.\nFor our first attempt, we’ll recreate a very general version of the game:\n\nthe prize can be found behind any of 3 doors\nthe contestant will pick any of 3 doors\nMonty will reveal one door and offer a chance to switch\nthe contestant will choose to switch or stay depending on the parameter stay\n\n\nlibrary(ggplot2)\nlibrary(dplyr)\nlibrary(tidyr)\n\nmonty_hall <- function(stay){\n    \n  doors <- c(\"A\", \"B\", \"C\")              # using ABC due to a quirk in sample()\n\n  prize_door <- sample(doors, 1)\n  contestant_choice <- sample(doors, 1)\n    \n  reveal_door <-                                # Monty can't reveal door with the prize,\n    union(prize_door, contestant_choice) %>%    # nor the selected door, so...\n    setdiff(doors, .) %>%                       # we remove those choices \n    sample(1)  \n\n  switch_offer <- setdiff(doors, c(contestant_choice, reveal_door))\n    \n  ifelse(prize_door == ifelse(stay, contestant_choice, switch_offer),\n         \"win\", \"lose\")\n    # the function returns the strings \"win\" and \"lose\"\n    # when stay is TRUE, check if the prize door matches the contestant's choice\n    # when stay is FALSE, check if the prize door matches the door offered in a switch\n}\n\nNext, we’ll generate 10K trials of the game under each of the two options (switching and staying). We’ll reshape the outcomes just a bit and then plot them.\n\nmonty_stay_trials <- replicate(10000, monty_hall(stay = TRUE))\nmonty_switch_trials <- replicate(10000, monty_hall(stay = FALSE))\n\ndata.frame(stay = monty_stay_trials, switch = monty_switch_trials) %>%\n  pivot_longer(everything(), names_to = \"choice\", values_to = \"outcome\") %>% \n  ggplot(aes(x = outcome)) +\n    geom_bar(stat = \"count\") +\n    facet_wrap(~choice) +\n    labs(title = \"Monty Hall Monte Carlo simulation results\",\n         subtitle = \"10,000 trials per contestent choice possibility\") +\n    theme(text = element_text(size = 20))\n\n\n\n\nThe simulations show us exactly what we expected; switching is good, staying is bad. We can also easily confirm that the probability of winning by switching is \\(2/3\\):\n\nmean(monty_switch_trials == \"win\")\n\n[1] 0.6657\n\n\nOur answer is close to \\(2/3\\), and the difference between it and \\(2/3\\) is a small statistical fluctuation, as expected.\nSo, good news: we have confirmed that the correct answer is indeed correct. But can we render any deeper insights from this? Let’s focus on the function in the case when stay == TRUE. In that case, the code looks like this:\nmonty_hall <- function(stay){\n    \n  doors <- c(\"A\", \"B\", \"C\")      \n\n  prize_door <- sample(doors, 1)\n  contestant_choice <- sample(doors, 1)\n    \n  reveal_door <- \n    union(prize_door, contestant_choice) %>%    \n    setdiff(doors, .) %>%                       \n    sample(1)  \n\n  switch_offer <- setdiff(doors, c(contestant_choice, reveal_door))\n    \n  ifelse(prize_door == contestant_choice, \"win\", \"lose\")\n}\n\nHere, switch_offer doesn’t actually get used at all in the line that returns the function. This means that the switch_offer <- ... line, and the reveal_door <- ... lines, are unused appendages. If we remove them, we’re left with this:\nmonty_hall <- function(stay){\n    \n  doors <- c(\"A\", \"B\", \"C\")      \n\n  prize_door <- sample(doors, 1)\n  contestant_choice <- sample(doors, 1)\n    \n  ifelse(prize_door == contestant_choice, \"win\", \"lose\")\n}\nNow, we see that our code has reduced to a simulation that draws two objects independently from a collection of three and checks to see if they’re the same. That probability is clearly \\(1/3\\), and this explanation now aligns perfectly with the Wikipedia explanation that nothing has changed the original probability of \\(1/3\\), whether that explanation is “fishy” or not."
+  },
+  {
+    "objectID": "posts/2022-07-10-monty-hall/index.html#takeaway",
+    "href": "posts/2022-07-10-monty-hall/index.html#takeaway",
+    "title": "Let’s Make a Deal!",
+    "section": "Takeaway",
+    "text": "Takeaway\nIt’s great to be able to use Monte Carlo simulations to confirm a correct answer, but in this case the act of writing a simulation can do something more profound: it can make the why behind the answer just a bit more convincing. Or, at least, it did that for me. I’ve seen (and believed, and produced) many analytical arguments for why switching has a \\(2/3\\) probability, but I never fully believed the Wikipedia explanation until writing code to simulate the game."
+  },
+  {
+    "objectID": "posts/post-with-code/index.html",
+    "href": "posts/post-with-code/index.html",
+    "title": "Post With Code",
+    "section": "",
+    "text": "This is a post with executable code.\n\n1 + 1\n\n[1] 2"
+  },
+  {
+    "objectID": "posts/welcome/index.html",
+    "href": "posts/welcome/index.html",
+    "title": "Welcome To My Blog",
+    "section": "",
+    "text": "This is the first post in a Quarto blog. Welcome!\n\nSince this post doesn’t specify an explicit image, the first image in the post will be used in the listing page of posts."
+  }
+]
