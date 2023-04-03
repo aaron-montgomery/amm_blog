@@ -8,7 +8,7 @@ website:
     right:
       - about.qmd
       - icon: github
-        href: https://github.com/
+        href: https://github.com/aaron-montgomery
       - icon: linkedin
         href: https://www.linkedin.com/in/aaron-montgomery-6b17421b1/        
 format:
