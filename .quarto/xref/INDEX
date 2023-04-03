@@ -16,5 +16,8 @@
   },
   "testfile.md": {
     "testfile.html": "c740647a"
+  },
+  "posts/2022-07-27-ordered-objects/index.qmd": {
+    "index.html": "1f493308"
   }
 }

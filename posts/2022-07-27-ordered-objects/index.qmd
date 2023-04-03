@@ -1,0 +1,157 @@
+---
+title: "Hey, Who Invited You?"
+format:
+  html:
+    fig-width: 10
+    fig-height: 6
+    fig-align: 'center'
+description: "A coding problem brings an uninvited famous mathematical guest"
+author: "Aaron Montgomery"
+date: "2022-07-27"
+categories: [probability, simulation, monte-carlo, eulers-number, counterintuitive]
+image: "letters.jpg"
+---
+
+| ![](letters.jpg) |
+|:--:|
+| <font size = "2">Photo by <a href="https://unsplash.com/@sure_mp?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Surendran MP</a> on <a href="https://unsplash.com/s/photos/letters?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Unsplash</a> </font>|
+
+# Coding as a Mathematical Laboratory
+
+I've always been a little bit jealous of lab-based sciences like chemistry and physics. To me, there's something romantic about being able to conduct true *experiments* in a physical space. Since mathematicians tend to ply our trade in proofs, our "experiments" might be incomplete theorems on a blackboard or half-formed diagrams scrawled on the back of a napkin. We don't quite have a natural way to "mix some threes with some sevens and add a dash of elevens" in a way that a chemist might do with hydrogen, sulfer, and oxygen. (NB: Chemists should probably not do that.)
+
+Introducing Monte Carlo simulation into my classrooms has been the first thing that has felt to me like a mathematical laboratory. To illustrate what I mean, I'll tell a story from a recent class: I assigned the following exercise, which was to be completed with Monte Carlo simulations in R.
+
+> Suppose you repeatedly draw upper-case letters from a jar without replacement 
+until the first time you get one that is out of order. What is the expected 
+number of draws for this to occur? (Example: if you draw B-E-R-D, you would stop 
+at D, because it was the first letter you drew that didn't occur after the 
+previous letter in the alphabet. This would count as 4 draws.)	
+
+> Note that it is OK to ignore the case where you draw all the letters 
+in perfect order, because this is rare enough that it will probably not occur 
+even in trillions of simulations.
+
+At the point in the class when I assign this problem, this is intended to be a medium-difficulty coding problem. Students have to put together many of the skills we have gathered by that point, including:
+
+- Monte Carlo simulation
+- indexing of vectors
+- loops
+
+This exercise has my favorite homework aesthetic, which is **old skills, assembled together in a new way.** But although I've long thought it was a pretty good exercise, it wasn't particularly noteworthy or interesting. At least, I didn't think it was.
+
+My solution to the problem looked something like this:
+
+```{r}
+letters_until_unordered <- function(){
+  mydraws <- sample(LETTERS)   # draw full sample of all 26 letters
+  check <- 2                   
+    # the check variable keeps track of how many we have to draw
+    # before seeing one that is out of order; this is what the
+    # function will return
+    
+  while(identical(mydraws[1:check], sort(mydraws[1:check])) & check <= 26){
+    check <- check + 1
+  } # loop should continue until vector isn't same as sorted self
+    
+  check
+}
+# note: if we draw all letters in order, this function will return 27
+# this won't happen, even in a simulation, before the heat death of the universe
+```
+
+That function allows us to compute a Monte Carlo estimate of the expected value from the original question:
+
+```{r}
+mean(replicate(10000, letters_until_unordered()))
+```
+
+In one of the early semesters I taught the class, a student correctly solved the question and brought me his code with an interesting question: **is the true answer supposed to be Euler's number?** That is, should we expect the Monte Carlo simulations to hover around $e \approx 2.718282...$?
+
+## The Incorrect Answer
+
+My immediate answer was: **No, that must just be a coincidence.**
+
+## The Correct Answer
+
+I was wrong. **The true answer was actually $e$.** Well, almost.
+
+(Quick disclaimer: this result is perfectly well-known to humanity; it just wasn't well-known to *me* at the time.)
+
+When the student asked me this question, I replicated my answer a few more times to see if I still thought the resemblence to the magic number $2.718282...$ was accidental.
+
+```{r}
+mean(replicate(10000, letters_until_unordered()))
+```
+
+Hmmm...
+
+```{r}
+mean(replicate(10000, letters_until_unordered()))
+```
+
+*Very* suspicious. Let's try using more replications for finer accuracy:
+
+```{r}
+mean(replicate(1e5, letters_until_unordered()))
+```
+
+HMMMM.....
+
+```{r}
+mean(replicate(1e6, letters_until_unordered())) 
+# runtime starts to get a little long: ~50 seconds on my machine
+```
+
+That was hard to ignore, and it practically reeked of Euler's number. This caught me completely off guard; I had written the problem without any idea that $e$ belonged here at all, and yet... here it was. On the one hand, I shouldn't have been surprised at all. This is just a Thing That Happens with certain famous mathematical constants like $e$ and $\pi$; they frequently show up where they frankly have no business being.
+
+I did find myself surprised, though -- mostly, by the fact that I had encountered an experiment-driven result, which I am not at all accustomed to. I don't think I would ever have considered this result were it not for this esoteric homework problem I conjured up (and the help of the keen-eyed student). Monte Carlo simulations gave me something that I imagine must feel a little bit like when a physicist can't explain a bump on a curve, or when a biologist sees a bacterial growth rate that has no known explanation. The next step for that physicist, or that biologist, and for me, was to ask *why*.
+
+In this way, I was behaving in the most analogous way possible to an experimental scientist. Such a scientist might discover a fascinating new result in a lab; new results yearn for new *theories*, and it is those *theories* that are powerful. Theories are what convey existing and lasting knowledge to humanity. The experiments themselves matter only insofar as they suggest or reveal deeper truths; but the experiments themselves are but partial reflections of those truths. This homework problem doesn't matter; what makes it tick matters.
+
+This also helped crystallize to me an important lesson about the pedagogy of mathematical education. One of my most important missions in my own classrooms has been to transfer as much agency to students as possible. I tend to gravitate strongly toward [active learning](https://www.ams.org/publications/journals/notices/201702/rnoti-p124.pdf) strategies. My teaching philosophy is fairly simple: anything *students* do is good, and anything *I* do is inherently less good. Here, too, I've long been jealous of lab sciences; they have a built-in pedagogy to invite students to meaningfully engage, right from the very beginning of study. Teaching a course on Monte Carlo simulations has been the first thing I've done that has felt just a little bit like a lab.
+
+And yet, the simulations have also underscored for me the importance of understanding "traditional" mathematics; we can discover wildly interesting results through Monte Carlo simulations, but only mathematical reasoning can deliver the all-important *why*. Simulations are a wonderful way to *augment* a traditional probability and statistics curriculum, but I don't think they should *replace* it.
+
+## Takeaway
+
+Monte Carlo simulations have given me a new way to invite students who can write just a bit of code to *experiment* and to *play* in a mathematical space. Inviting students into this style of mathematical "laboratory" has been incredibly rewarding, and it has allowed me to engage students much more fully than I'm typically able to do in introductory probability / statistics classes. It has allowed me to transfer some of the ownership of the subject material to students, which seems to me an unqualified good thing. 
+
+However, Monte Carlo simulations are inherently limited in scope. They can give us incredibly interesting results, and they can do so in a much more accessible way than can classical mathematics and statistics. But by themselves, they can never give us that elusive *why*.
+
+---
+
+## Wait, what about the "Why" part?
+
+It would be pretty unsatisfying if after all that discussion, we didn't get around to the proof of the aforementioned result. Once again, to be clear, this result is perfectly well-known; I just hadn't personally encountered it before. Once the student brought this seeming coincidence to my attention, I immediately set out to try to prove it.
+
+To remind ourselves, here's the result:
+
+### Theorem
+
+Suppose you repeatedly draw upper-case letters from a jar without replacement until the first time you get one that is out of order. The expected number of draws executed in this fashion will be very slightly less than $e$.
+
+### Proof
+
+For $k \geq 1$, let $A_k$ denote the event that the first $k$ letters drawn are all in order. (That is: $A_1$ is trivial, $A_2$ holds only if the first two letters are drawn in order, and so forth.) If we let $N$ denote random variable of the number of letters drawn until finding one out of sequence, then we note that
+$$ N = 1 + \mathbb 1_{A_1} + \mathbb 1_{A_2} + \dots + \mathbb 1_{A_{26}}$$
+where $\mathbb 1_{B}$ denotes the indicator function of event $B$. This is both the most important and least obvious step in the proof; the logic of this step is that $N$ and each $\mathbb 1_{A_k}$ are random variables, meaning they're functions of some unseen input variable $\omega$. Here, choosing an $\omega$ determines a full ordering of the letters, and once this has been done, a certain number of events $\{A_1, \dots, A_n\}$ will be fulfilled, making their corresponding indicator variables evaluate to $1$ on that $\omega$. Summing these indicators will therefore count the events, as desired.
+
+The leading $1$ in the above expression is meant to count the one letter we'll draw that's *out* of order and therefore *not* counted by the indicator variables; technically, this isn't very well-defined for the case when we draw all 26 letters in order, but that's a very low-probability event that we were explicitly invited in the problem statement to ignore, so we'll just accept the fact that $N$ evaluates to $27$ in that case. (I originally added that detail in the problem statement to alleviate a coding nuisance, and it turned out to alleviate a corresponding mathematical nuisance here.)
+
+The decomposition above is useful, because it therefore follows that
+$$ \mathbb E[N] = 1 + \mathbb E \left[ \mathbb 1_{A_1} \right] + \mathbb E \left[ \mathbb 1_{A_2} \right] + \dots + \mathbb E \left[ \mathbb 1_{A_{26}} \right] = 1 + \sum_{k=1}^{26} \mathbb E \left[ \mathbb 1_{A_k} \right].$$
+I should stop and explicitly acknowledge that this really, really feels like we're cheating somehow. The $\{A_k\}$ events are definitely *not* independent; in fact, they're completely *dependent*, as $A_{k+1} \subset A_k$. (If the first twelve letters were perfectly ordered, then the first eleven were also.) However, independence is not required for linearity of expectation.
+
+From here, we recall that $\mathbb E \left[ \mathbb 1_B \right] = \mathbb P(B)$ for any event $B$, which means that we need only to compute $\mathbb P(A_k)$. When drawing $k$ objects, there are $k!$ rearrangements of those objects, of which only $1$ is properly ordered, from which it follows that $\mathbb P(A_k) = \frac 1 {k!}$. Hence,
+$$\mathbb E[N] = 1 + \sum_{k=1}^{26} \mathbb P \left( A_k \right) = 1 + \sum_{k=1}^{26} \frac{1}{k!} = \sum_{k=0}^{26} \frac{1}{k!}$$
+and we notice that this is simply the first few terms of the infinite series
+$$\sum_{k=0}^{\infty} \frac{1}{k!} = e.$$
+
+So, the true expected value in our original question isn't *quite* $e$ -- it's a number just below it. Specifically, it's $e - \sum_{k=27}^{\infty} \frac{1}{k!}$. To see how close this is to $e$, let's use R to sum the first few terms of the remainder series:
+
+```{r}
+sum(1 / factorial(27:1000))
+```
+
+Pretty close to $e$, indeed. And while the true answer isn't actually *quite* $e$, we were never going to be able to distinguish the true answer from $e$ with only a Monte Carlo simulation.
