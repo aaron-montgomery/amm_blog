@@ -1,6 +1,6 @@
 ---
 title: "About"
-image: profile.jpg
+image: montgomery.jpg
 about:
   template: solana
   links:
@@ -9,7 +9,7 @@ about:
       href: https://www.linkedin.com/in/aaron-montgomery-6b17421b1/
     - icon: github
       text: Github
-      href: https://github.com
+      href: https://github.com/aaron-montgomery
 
 ---
 
@@ -24,4 +24,6 @@ and more recently I have become the coordinator of the new
 programs.
 
 I am always open to collaborating on interesting statistical or data-oriented 
-projects! You can reach me at `amontgom` (atsymbol) `bw.edu`.
+projects! You can reach me at `amontgom` (atsymbol) `bw.edu`. You can find the
+GitHub source for this blog 
+[here](https://github.com/aaron-montgomery/amm_blog).
