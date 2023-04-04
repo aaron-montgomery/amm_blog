@@ -1,11 +1,11 @@
 ---
-title: "Welcome To My Blog"
+title: "Coming Soon...."
 author: "Aaron Montgomery"
-date: "2023-01-23"
+date: "2023-04-03"
 categories: [news]
 ---
 
-Please excuse my dust! I'm trying to work with a brand new work flow. How did you even find this, anyway?
+Please excuse my dust! I'm in the middle of rebuilding my old blog. You win three internet points for finding this temporary page! 
 
 ![](thumbnail.jpg)
 
