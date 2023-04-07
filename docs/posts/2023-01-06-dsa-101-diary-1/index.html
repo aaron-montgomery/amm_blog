@@ -1,0 +1,376 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.2.313">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+<meta name="author" content="Aaron Montgomery">
+<meta name="dcterms.date" content="2023-01-06">
+<meta name="description" content="Lessons from the first offering of the class">
+
+<title>Aaron M. Montgomery - Teaching Data 101 with Dataquest</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1.6em;
+  vertical-align: middle;
+}
+</style>
+
+
+<script src="../../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../../site_libs/quarto-nav/headroom.min.js"></script>
+<script src="../../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../../site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="../../site_libs/quarto-search/fuse.min.js"></script>
+<script src="../../site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="../../">
+<script src="../../site_libs/quarto-html/quarto.js"></script>
+<script src="../../site_libs/quarto-html/popper.min.js"></script>
+<script src="../../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../../site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="../../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../../site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
+<script id="quarto-search-options" type="application/json">{
+  "location": "navbar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "end",
+  "type": "overlay",
+  "limit": 20,
+  "language": {
+    "search-no-results-text": "No results",
+    "search-matching-documents-text": "matching documents",
+    "search-copy-link-title": "Copy link to search",
+    "search-hide-matches-text": "Hide additional matches",
+    "search-more-match-text": "more match in this document",
+    "search-more-matches-text": "more matches in this document",
+    "search-clear-button-title": "Clear",
+    "search-detached-cancel-button-title": "Cancel",
+    "search-submit-button-title": "Submit"
+  }
+}</script>
+
+
+<link rel="stylesheet" href="../../styles.css">
+</head>
+
+<body class="nav-fixed fullcontent">
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top">
+    <nav class="navbar navbar-expand-lg navbar-dark ">
+      <div class="navbar-container container-fluid">
+      <div class="navbar-brand-container">
+    <a class="navbar-brand" href="../../index.html">
+    <span class="navbar-title">Aaron M. Montgomery</span>
+    </a>
+  </div>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+  <span class="navbar-toggler-icon"></span>
+</button>
+          <div class="collapse navbar-collapse" id="navbarCollapse">
+            <ul class="navbar-nav navbar-nav-scroll ms-auto">
+  <li class="nav-item">
+    <a class="nav-link" href="../../about.html">
+ <span class="menu-text">About</span></a>
+  </li>  
+  <li class="nav-item compact">
+    <a class="nav-link" href="https://github.com/aaron-montgomery"><i class="bi bi-github" role="img">
+</i> 
+ <span class="menu-text"></span></a>
+  </li>  
+  <li class="nav-item compact">
+    <a class="nav-link" href="https://www.linkedin.com/in/aaron-montgomery-6b17421b1/"><i class="bi bi-linkedin" role="img">
+</i> 
+ <span class="menu-text"></span></a>
+  </li>  
+</ul>
+              <div id="quarto-search" class="" title="Search"></div>
+          </div> <!-- /navcollapse -->
+      </div> <!-- /container-fluid -->
+    </nav>
+</header>
+<!-- content -->
+<header id="title-block-header" class="quarto-title-block default page-columns page-full">
+  <div class="quarto-title-banner page-columns page-full">
+    <div class="quarto-title column-body">
+      <h1 class="title">Teaching Data 101 with Dataquest</h1>
+                  <div>
+        <div class="description">
+          Lessons from the first offering of the class
+        </div>
+      </div>
+                          <div class="quarto-categories">
+                <div class="quarto-category">dataquest</div>
+                <div class="quarto-category">teaching</div>
+                <div class="quarto-category">data-101</div>
+              </div>
+                  </div>
+  </div>
+    
+  
+  <div class="quarto-title-meta">
+
+      <div>
+      <div class="quarto-title-meta-heading">Author</div>
+      <div class="quarto-title-meta-contents">
+               <p>Aaron Montgomery </p>
+            </div>
+    </div>
+      
+      <div>
+      <div class="quarto-title-meta-heading">Published</div>
+      <div class="quarto-title-meta-contents">
+        <p class="date">January 6, 2023</p>
+      </div>
+    </div>
+    
+      
+    </div>
+    
+  
+  </header><div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
+<!-- sidebar -->
+<!-- margin-sidebar -->
+    
+<!-- main -->
+<main class="content quarto-banner-title-block" id="quarto-document-content">
+
+
+
+
+<table class="table">
+<colgroup>
+<col style="width: 100%">
+</colgroup>
+<thead>
+<tr class="header">
+<th style="text-align: center;"><img src="dataquest.png" class="img-fluid"></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: center;"><font size="2"> <a href="https://www.dataquest.io/">dataquest.io</a> </font></td>
+</tr>
+</tbody>
+</table>
+<section id="overview" class="level1">
+<h1>Overview</h1>
+<p>I’m taking a quick break from the usual “weird tales from probability, statistics, and data” oeuvre of this blog. For this post, I’d like to write about something else that’s near and dear to my both my heart and my daily schedule: teaching an <strong>Introduction to Data Science and Analytics</strong> course.</p>
+<p>This course (DSA-101 for short) is the foundational, introductory-level course for the new <a href="https://www.bw.edu/academics/undergraduate/data-science/">Data Science</a> and <a href="https://www.bw.edu/academics/undergraduate/data-analytics/">Data Analytics</a> programs we have launched this year at <a href="https://www.bw.edu/">Baldwin Wallace University</a>. In lieu of a textbook, I decided to adopt <a href="https://www.dataquest.io/">Dataquest</a> for use in our class.</p>
+<p>Here’s where I should put a disclosure – or, rather, a lack thereof. I am not affiliated with Dataquest; I am not paid by Dataquest in any capacity, particularly including for using their platform in my class. Nobody at Dataquest has solicited this post in any fashion from me. I’m writing about this because, simply put, Dataquest is a well-made product and I believe in it.</p>
+<p>More practically, I’m writing this post with some actionable tips for anyone who would like to try using Dataquest in a structured classroom environment. This entire class was an experiment for me; some things worked well, some were total flops, and some were in between. I’m hoping that by documenting my experience here, I might be able to provide a roadmap for anyone else who would like to try this… including myself, when I teach another section of this class in the upcoming Spring semester.</p>
+</section>
+<section id="what-is-dataquest" class="level1">
+<h1>What is Dataquest?</h1>
+<p>Dataquest is a collection of online courses covering data topics. Many similar products exist, but what makes Dataquest special is its blend of structured lessons and open-ended projects. Moreover, it has clearly been assembled by instructors who understand education and the crucial role of nontrivial active learning. It is challenging, but also supportive; it asks much of learners, but it provides enough scaffolding for them to get there.</p>
+<p>I am a huge fan of Dataquest, and these defining features are why:</p>
+<ol type="1">
+<li><strong>The program doesn’t take educational shortcuts.</strong> Learners write code on a blank prompt instead of filling in blanks or modifying existing code. Exercises ask students to think, not to trivially adjust things they’ve already seen. Descriptions are given in text and graphics, not in videos that make the learner feel good while subconsciously zoning out. Completing the lessons doesn’t feel like <em>following instructions</em>; it feels more like <em>solving problems</em>.</li>
+<li><strong>Projects invite meaningful creativity.</strong> The projects interspersed throughout the curriculum are open-ended and challenging. These projects embrace the idea that there are multiple correct ways to solve problems, and that different people may arrive at different conclusions. A student from my previous semester described one of these projects as “hard, but in a good way.”</li>
+<li><strong>It’s fun.</strong> When I was preparing the DSA-101 course, I decided to complete the R tidyverse modules on my own first so that I deeply understood what I was asking my students to do. This was much more fun than I expected, and I learned a lot while completing it. Even though I’ll still be using the R content for the DSA-101 class this semester, I’ve decided to learn some Python on the side, just because I can. I think most learning is intrinsically fun, and Dataquest does a wonderful job of enabling the fun to naturally occur.</li>
+</ol>
+<p>The <a href="https://www.dataquest.io/academic-program/">Dataquest Academic Program</a> provides a way for instructors to use the Dataquest platform in their classes <strong>at no charge</strong>. I kept waiting all semester to see what the catch would be, and… it just never came. We were generously granted Dataquest use for the entire semester, for free. Given that I was using it like a textbook, and functionally in place of a textbook, my students were pretty excited about this.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="dataquest_screenshot.png" class="img-fluid figure-img"></p>
+<p></p><figcaption class="figure-caption">Dataquest Screenshot</figcaption><p></p>
+</figure>
+</div>
+</section>
+<section id="using-dataquest-in-dsa-101" class="level1">
+<h1>Using Dataquest in DSA-101</h1>
+<p>Since our DSA-101 course serves as the cornerstone of our new data majors, I had some design considerations as I constructed the course. Dataquest includes robust coverage of both the R and Python programming languages; I opted to use R because my university’s data programs already required multiple other Python-based courses from our Computer Science department, but did not already have any coverage of R’s <code>tidyverse</code>.</p>
+<p>Students entered the course with a wide variety of backgrounds; some students were senior-level Computer Science majors looking to add some data skills, and others had no programming experience at all. Since most of the veteran coders’ experience was in Python or Java, using R leveled the playing field somewhat and made it easier for all students to relate to one another as learners.</p>
+<p>The typical class experience was similar to a “flipped” class. During our class time, students worked on their own to complete Dataquest modules that extended to homework on an as-needed basis. Students also spent significant time working in groups on formative group quizzes meant to foster discussion.</p>
+</section>
+<section id="what-worked-well" class="level1">
+<h1>What worked well</h1>
+<p>Here are the things about the course that I would do again and would recommend for any other instructors who are thinking about using the Dataquest Academic Program:</p>
+<ul>
+<li><strong>A customized content path</strong>: None of the existing career paths in Dataquest quite fit what I was hoping to do in the class, so I carefully curated a list of the modules that I asked my students to complete.</li>
+<li><strong>Staying focused on deliverables</strong>: As I chose the modules used in my class, I kept my attention on what I wanted them to be able to <em>make</em>. My first goal was for them to use <code>ggplot2</code> to construct some very basic graphs; we were able to achieve this goal in just over four weeks. Once we got there, data visualization suddenly became a tool that we could use to discuss broader data concepts. Being able to create things helped give the course a feel of relevance.</li>
+<li><strong>Balancing autonomy against a common pace</strong>: The veteran coders still had an obvious advantage in speed when picking up the R content. Allowing students to work on their own during class, and having homework naturally arise as spillover content for what they were not able to complete, mostly worked quite well to balance the different learning speeds.</li>
+</ul>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="dataquest_screenshot_3.png" class="img-fluid figure-img"></p>
+<p></p><figcaption class="figure-caption">Dataquest Screenshot</figcaption><p></p>
+</figure>
+</div>
+</section>
+<section id="what-could-have-gone-better" class="level1">
+<h1>What could have gone better</h1>
+<p>Here are the biggest areas where my use of Dataquest fell short of what I want to do as an instructor:</p>
+<ul>
+<li><strong>Fostering conversation and community</strong>: When students were working on Dataquest content, the room was too quiet! I encouraged them to talk to each other and work together, but mostly they wanted to work independently. We eventually settled on playing music during Dataquest sessions, which helped – but next semester I’ll also place a greater emphasis on group work outside Dataquest to get them talking and sharing ideas.</li>
+<li><strong>Gaps in course content relative to my goals</strong>: There were a few topics that I was hoping to cover in the course for which I didn’t find suitable Dataquest coverage. In some cases, the content didn’t exist; in others, it was too long for me to use in the 15-week course. As such, I had to develop some content on my own outside the Dataquest platform, which didn’t go as well as I would have liked.</li>
+<li><strong>Built-in Dataquest projects as assessment</strong>: The Dataquest projects are very, very good; however, I did not find them to work well for the graded assessments. The biggest issue was that the availability of the solution notebooks implicitly invited students to examine solutions and deprive themselves of chances to think. This isn’t a problem with the Dataquest platform, but rather with the concept of grading, which naturally twists incentives from learning to getting high scores. Next semester, I’ll write new original projects to nudge students away from this behavior.</li>
+</ul>
+</section>
+<section id="other-tips-and-tricks" class="level1">
+<h1>Other tips and tricks</h1>
+<p>Some pieces of advice I would have for any instructors using the Dataquest Academic Program:</p>
+<ul>
+<li><strong>Before you ask a class to complete something, go through it yourself first.</strong> This seems like an obvious teaching tip, but it’s worth reiterating here; I was tempted to skip some modules I wanted to assign to my students on basic R things that I knew well. However, completing the modules on my own first allowed me to deeply understand what my students would have seen and to predict places where they would struggle. This also put into clearer focus which modules were worth our limited class time.</li>
+<li><strong>Supplement Dataquest content with structured questions.</strong> After most lessons, I gave my class something called “zero-stakes quizzes” that were designed to give them something to work on together outside the Dataquest content. This allowed me to both reinforce the skills conveyed in Dataquest and to push them a bit further on things that weren’t covered by the modules; it also got them talking to each other, which helped improve the feel of the class.</li>
+</ul>
+</section>
+<section id="conclusion" class="level1">
+<h1>Conclusion</h1>
+<p>I really can’t say enough good things about Dataquest and my experience using it in my class. Whether you’re someone looking to learn some data and programming concepts, or you’re an instructor looking to provide some structured assistance for students, <a href="https://www.dataquest.io">Dataquest</a> is worth checking out. (There’s a free trial available if you want to give it a shot!)</p>
+
+
+</section>
+
+</main> <!-- /main -->
+<script id="quarto-html-after-body" type="application/javascript">
+window.document.addEventListener("DOMContentLoaded", function (event) {
+  const toggleBodyColorMode = (bsSheetEl) => {
+    const mode = bsSheetEl.getAttribute("data-mode");
+    const bodyEl = window.document.querySelector("body");
+    if (mode === "dark") {
+      bodyEl.classList.add("quarto-dark");
+      bodyEl.classList.remove("quarto-light");
+    } else {
+      bodyEl.classList.add("quarto-light");
+      bodyEl.classList.remove("quarto-dark");
+    }
+  }
+  const toggleBodyColorPrimary = () => {
+    const bsSheetEl = window.document.querySelector("link#quarto-bootstrap");
+    if (bsSheetEl) {
+      toggleBodyColorMode(bsSheetEl);
+    }
+  }
+  toggleBodyColorPrimary();  
+  const icon = "";
+  const anchorJS = new window.AnchorJS();
+  anchorJS.options = {
+    placement: 'right',
+    icon: icon
+  };
+  anchorJS.add('.anchored');
+  const clipboard = new window.ClipboardJS('.code-copy-button', {
+    target: function(trigger) {
+      return trigger.previousElementSibling;
+    }
+  });
+  clipboard.on('success', function(e) {
+    // button target
+    const button = e.trigger;
+    // don't keep focus
+    button.blur();
+    // flash "checked"
+    button.classList.add('code-copy-button-checked');
+    var currentTitle = button.getAttribute("title");
+    button.setAttribute("title", "Copied!");
+    let tooltip;
+    if (window.bootstrap) {
+      button.setAttribute("data-bs-toggle", "tooltip");
+      button.setAttribute("data-bs-placement", "left");
+      button.setAttribute("data-bs-title", "Copied!");
+      tooltip = new bootstrap.Tooltip(button, 
+        { trigger: "manual", 
+          customClass: "code-copy-button-tooltip",
+          offset: [0, -8]});
+      tooltip.show();    
+    }
+    setTimeout(function() {
+      if (tooltip) {
+        tooltip.hide();
+        button.removeAttribute("data-bs-title");
+        button.removeAttribute("data-bs-toggle");
+        button.removeAttribute("data-bs-placement");
+      }
+      button.setAttribute("title", currentTitle);
+      button.classList.remove('code-copy-button-checked');
+    }, 1000);
+    // clear code selection
+    e.clearSelection();
+  });
+  function tippyHover(el, contentFn) {
+    const config = {
+      allowHTML: true,
+      content: contentFn,
+      maxWidth: 500,
+      delay: 100,
+      arrow: false,
+      appendTo: function(el) {
+          return el.parentElement;
+      },
+      interactive: true,
+      interactiveBorder: 10,
+      theme: 'quarto',
+      placement: 'bottom-start'
+    };
+    window.tippy(el, config); 
+  }
+  const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+  for (var i=0; i<noterefs.length; i++) {
+    const ref = noterefs[i];
+    tippyHover(ref, function() {
+      // use id or data attribute instead here
+      let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+      try { href = new URL(href).hash; } catch {}
+      const id = href.replace(/^#\/?/, "");
+      const note = window.document.getElementById(id);
+      return note.innerHTML;
+    });
+  }
+  const findCites = (el) => {
+    const parentEl = el.parentElement;
+    if (parentEl) {
+      const cites = parentEl.dataset.cites;
+      if (cites) {
+        return {
+          el,
+          cites: cites.split(' ')
+        };
+      } else {
+        return findCites(el.parentElement)
+      }
+    } else {
+      return undefined;
+    }
+  };
+  var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+  for (var i=0; i<bibliorefs.length; i++) {
+    const ref = bibliorefs[i];
+    const citeInfo = findCites(ref);
+    if (citeInfo) {
+      tippyHover(citeInfo.el, function() {
+        var popup = window.document.createElement('div');
+        citeInfo.cites.forEach(function(cite) {
+          var citeDiv = window.document.createElement('div');
+          citeDiv.classList.add('hanging-indent');
+          citeDiv.classList.add('csl-entry');
+          var biblioDiv = window.document.getElementById('ref-' + cite);
+          if (biblioDiv) {
+            citeDiv.innerHTML = biblioDiv.innerHTML;
+          }
+          popup.appendChild(citeDiv);
+        });
+        return popup.innerHTML;
+      });
+    }
+  }
+});
+</script>
+</div> <!-- /content -->
+
+
+
+</body></html>
