@@ -8,7 +8,7 @@ format:
 description: "Failed propositions yield deeper mysteries"
 author: "Aaron Montgomery"
 date: "2022-09-23"
-categories: [probability, simulation, monte-carlo, penneys-game, counterintuitive]
+categories: [probability, simulation, monte-carlo, penneys-game, counterintuitive, r-language]
 image: "pennies_hex.jpg"
 ---
 

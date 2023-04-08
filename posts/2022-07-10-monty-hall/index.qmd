@@ -8,7 +8,7 @@ format:
 description: "Monty Hall meets Monte Carlo"
 author: "Aaron Montgomery"
 date: "2022-07-14"
-categories: [probability, simulation, monte-carlo, monty-hall, counterintuitive]
+categories: [probability, simulation, monte-carlo, monty-hall, counterintuitive, r-language]
 image: "three_doors.jpg"
 ---
 

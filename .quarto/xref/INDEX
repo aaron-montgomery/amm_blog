@@ -34,5 +34,11 @@
   },
   "posts/2023-01-06-dsa-101-diary-1/index.qmd": {
     "index.html": "5432f180"
+  },
+  "unindexed/test_post.qmd": {
+    "test_post.html": "6dbe0a68"
+  },
+  "unindexed/uniform_numbers_solution.qmd": {
+    "uniform_numbers_solution.html": "07022ed9"
   }
 }
