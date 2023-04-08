@@ -8,7 +8,7 @@ format:
 description: "A naturally-occurring rock-paper-scissors"
 author: "Aaron Montgomery"
 date: "2022-08-05"
-categories: [probability, simulation, monte-carlo, penneys-game, counterintuitive, r-language]
+categories: [simulation, penneys-game, counterintuitive, r-language]
 image: "pile_of_pennies.jpg"
 ---
 

@@ -8,7 +8,7 @@ format:
 description: "testing"
 author: "Aaron Montgomery"
 date: "2023-04-14"
-categories: [testing]
+categories: [eulers-number, counterintuitive]
 ---
 
 # Question

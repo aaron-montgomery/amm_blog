@@ -5,10 +5,10 @@ format:
     fig-width: 10
     fig-height: 6
     fig-align: 'center'
-description: "Failed propositions yield deeper mysteries"
+description: "The graveyard of reasonable conjectures"
 author: "Aaron Montgomery"
 date: "2022-09-23"
-categories: [probability, simulation, monte-carlo, penneys-game, counterintuitive, r-language]
+categories: [simulation, penneys-game, counterintuitive, r-language]
 image: "pennies_hex.jpg"
 ---
 

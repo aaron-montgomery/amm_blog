@@ -8,7 +8,7 @@ format:
 description: "The waiting (time) is the hardest part"
 author: "Aaron Montgomery"
 date: "2022-08-10"
-categories: [probability, simulation, monte-carlo, penneys-game, counterintuitive, r-language]
+categories: [simulation, penneys-game, counterintuitive, r-language]
 image: "chris-briggs-VK7jXtOtEuM-unsplash.jpg"
 ---
 
