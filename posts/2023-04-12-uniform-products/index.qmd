@@ -110,7 +110,7 @@ So, what if we make the numbers bigger? Instead of restricting them to $[0, 1]$,
 let's spread them out a bit and consider numbers uniformly distributed on
 $[0, 10]$. This time, about $10\%$ of the numbers will be less than 1 (and
 thereby make the product smaller), but the other $90\%$ of the numbers will be
-between 1 and 9 (and thereby make the product bigger). Maybe that will be
+between 1 and 10 (and thereby make the product bigger). Maybe that will be
 enough....?
 
 ```{python}
@@ -152,9 +152,9 @@ plt.show()
 
 Looking carefully at the y-axis shows that after just fifteen terms, a few of
 our products became very large; the largest of the ten trials in the graph above
-is about 6 billion, and five of the ten trials were over 1 billion. When we 
-combine this with our previous exploration involving ten thousand terms, a
-picture starts to emerge: these products get huge.
+is about 6 billion, and five of the ten trials are over 1 billion. Putting all
+this together, we might (correctly) guess what happens: the more terms we throw
+into the product, the higher it goes, generally speaking.
 
 ---
 
@@ -200,17 +200,16 @@ Python code, here's a snippet to get started:
 #| eval: false
 from numpy.random import default_rng
 rng = default_rng()
-print(rng.uniform(low=0, high=10, size=n).prod())
+print(rng.uniform(low=0, high=10, size=10000).prod())
 ```
 
 If you don't have a place to run Python code, I can provide one! Here's a 
 [Google Colab notebook](https://colab.research.google.com/drive/1b40ZqoKZuXeblvGGwSe68f25B5XxliCx?usp=sharing)
 that you can open and run right away; no setup or Python installation required 
-on your local machine at all.
+on your local machine at all. You can use this Colab notebook to experiment with
+the problem even if you have no prior experience in programming.
 
-Even if you're completely unfamiliar with programming, you can play with the 
-Colab notebook above and partake in this experiment. When you're ready to see
-the answer, it's 
+When you're ready to see the answer, it's 
 [here](https://aaron-montgomery.github.io/amm_blog/posts/2023-04-11-uniform-products-solution/).
 
 [^1]: Technically, these are [pseudorandom numbers](https://en.wikipedia.org/wiki/Pseudorandomness); von Neumann might accuse me of living in a [state of sin](https://en.wikiquote.org/wiki/John_von_Neumann) if I conflate the two. They're also just floating-point approximations of real numbers, not the genuine article. That's all okay; the magic will happen anyway despite these indiscretions.
