@@ -15,7 +15,8 @@ categories: [counterintuitive, python-language, simulation]
 |:--:|
 | <font size = "2"> Code to generate this graph can be found above @fig-rw </font>|
 
-PROVIDE LINK BACK TO POST
+This is the solution for the problem originally posed
+[here](https://aaron-montgomery.github.io/amm_blog/posts/2023-04-12-uniform-products/).
 
 # Question
 
@@ -211,7 +212,7 @@ look at them directly. As always, using simulations as a sort of
 [mathematical laboratory](https://aaron-montgomery.github.io/amm_blog/posts/2022-07-27-ordered-objects/)
 can be downright magical, but it's the *beginning* of a story, not its end.
 
-PROVIDE LINK BACK TO POST
+[Back to problem](https://aaron-montgomery.github.io/amm_blog/posts/2023-04-12-uniform-products/)
 
 [^1]: We'll use $\log(x)$ to denote the natural logarithm, i.e. the inverse of 
 $e^{x}$.

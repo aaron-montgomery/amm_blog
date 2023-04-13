@@ -196,10 +196,11 @@ Before I reveal the correct answer, I want to point out that **you**, the
 reader, can play around with this yourself! If you have a place to run some
 Python code, here's a snippet to get started:
 
-```
+```{python}
+#| eval: false
 from numpy.random import default_rng
 rng = default_rng()
-print(rng.uniform(low=0, high=C, size=n).prod())
+print(rng.uniform(low=0, high=10, size=n).prod())
 ```
 
 If you don't have a place to run Python code, I can provide one! Here's a 
@@ -209,8 +210,7 @@ on your local machine at all.
 
 Even if you're completely unfamiliar with programming, you can play with the 
 Colab notebook above and partake in this experiment. When you're ready to see
-the answer, it's here.
-
-PROVIDE LINK BACK TO ANSWER
+the answer, it's 
+[here](https://aaron-montgomery.github.io/amm_blog/posts/2023-04-11-uniform-products-solution/).
 
 [^1]: Technically, these are [pseudorandom numbers](https://en.wikipedia.org/wiki/Pseudorandomness); von Neumann might accuse me of living in a [state of sin](https://en.wikiquote.org/wiki/John_von_Neumann) if I conflate the two. They're also just floating-point approximations of real numbers, not the genuine article. That's all okay; the magic will happen anyway despite these indiscretions.

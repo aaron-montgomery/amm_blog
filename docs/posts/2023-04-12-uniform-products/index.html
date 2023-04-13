@@ -257,7 +257,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <span id="cb3-9"><a href="#cb3-9" aria-hidden="true" tabindex="-1"></a>plt.show()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 <div class="cell-output cell-output-display">
-<p><img src="index_files/figure-html/cell-4-output-1.png" class="img-fluid"></p>
+<p><img src="index_files/figure-html/cell-4-output-1.png" width="732" height="496"></p>
 </div>
 </div>
 <p>All bars have roughly equal heights with no discernible trends. Now, let’s ask an interesting question: <strong>What happens if we multiply all these numbers together?</strong></p>
@@ -296,7 +296,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <span id="cb6-23"><a href="#cb6-23" aria-hidden="true" tabindex="-1"></a>plt.show()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 <div class="cell-output cell-output-display">
-<p><img src="index_files/figure-html/cell-6-output-1.png" class="img-fluid"></p>
+<p><img src="index_files/figure-html/cell-6-output-1.png" width="738" height="515"></p>
 </div>
 </div>
 <p>This is a visualization of ten different ‘runs’ of products, each of which consists of multiplying fifteen numbers uniformly drawn on <span class="math inline">\([0, 1]\)</span>. As expected, the products collapse to 0 almost immediately.</p>
@@ -337,7 +337,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <span id="cb9-23"><a href="#cb9-23" aria-hidden="true" tabindex="-1"></a>plt.show()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 <div class="cell-output cell-output-display">
-<p><img src="index_files/figure-html/cell-8-output-1.png" class="img-fluid"></p>
+<p><img src="index_files/figure-html/cell-8-output-1.png" width="725" height="515"></p>
 </div>
 </div>
 <p>Looking carefully at the y-axis shows that after just fifteen terms, a few of our products became very large; the largest of the ten trials in the graph above is about 6 billion, and five of the ten trials were over 1 billion. When we combine this with our previous exploration involving ten thousand terms, a picture starts to emerge: these products get huge.</p>
@@ -355,14 +355,14 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <p>But….</p>
 <div class="cell" data-execution_count="8">
 <div class="sourceCode cell-code" id="cb10"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a>rng.uniform(low<span class="op">=</span><span class="dv">0</span>, high<span class="op">=</span><span class="dv">2</span>, size<span class="op">=</span><span class="dv">10000</span>).prod()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-display" data-execution_count="8">
+<div class="cell-output cell-output-display" data-execution_count="26">
 <pre><code>0.0</code></pre>
 </div>
 </div>
 <p>And just to make sure that <span class="math inline">\(2\)</span> is not right on the boundary of some change in behavior….</p>
 <div class="cell" data-execution_count="9">
 <div class="sourceCode cell-code" id="cb12"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a>rng.uniform(low<span class="op">=</span><span class="dv">0</span>, high<span class="op">=</span><span class="fl">2.1</span>, size<span class="op">=</span><span class="dv">10000</span>).prod()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-display" data-execution_count="9">
+<div class="cell-output cell-output-display" data-execution_count="27">
 <pre><code>0.0</code></pre>
 </div>
 </div>
@@ -371,11 +371,13 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <section id="the-correct-answer" class="level1">
 <h1>The Correct Answer</h1>
 <p>Before I reveal the correct answer, I want to point out that <strong>you</strong>, the reader, can play around with this yourself! If you have a place to run some Python code, here’s a snippet to get started:</p>
-<pre><code>from numpy.random import default_rng
-rng = default_rng()
-print(rng.uniform(low=0, high=C, size=n).prod())</code></pre>
-<pre><code></code></pre>
-<p><a href="https://colab.research.google.com/drive/1b40ZqoKZuXeblvGGwSe68f25B5XxliCx?usp=sharing">Google Colab notebook</a></p>
+<div class="cell" data-execution_count="10">
+<div class="sourceCode cell-code" id="cb14"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> numpy.random <span class="im">import</span> default_rng</span>
+<span id="cb14-2"><a href="#cb14-2" aria-hidden="true" tabindex="-1"></a>rng <span class="op">=</span> default_rng()</span>
+<span id="cb14-3"><a href="#cb14-3" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(rng.uniform(low<span class="op">=</span><span class="dv">0</span>, high<span class="op">=</span><span class="dv">10</span>, size<span class="op">=</span>n).prod())</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p>If you don’t have a place to run Python code, I can provide one! Here’s a <a href="https://colab.research.google.com/drive/1b40ZqoKZuXeblvGGwSe68f25B5XxliCx?usp=sharing">Google Colab notebook</a> that you can open and run right away; no setup or Python installation required on your local machine at all.</p>
+<p>Even if you’re completely unfamiliar with programming, you can play with the Colab notebook above and partake in this experiment. When you’re ready to see the answer, it’s <a href="https://aaron-montgomery.github.io/amm_blog/posts/2023-04-11-uniform-products-solution/">here</a>.</p>
 
 
 </section>
@@ -384,7 +386,7 @@ print(rng.uniform(low=0, high=C, size=n).prod())</code></pre>
 <div id="quarto-appendix" class="default"><section id="footnotes" class="footnotes footnotes-end-of-document" role="doc-endnotes"><h2 class="anchored quarto-appendix-heading">Footnotes</h2>
 
 <ol>
-<li id="fn1"><p>Technically, these are <a href="https://en.wikipedia.org/wiki/Pseudorandomness">pseudorandom numbers</a>; von Neumann might accuse me of living in a <a href="https://en.wikiquote.org/wiki/John_von_Neumann">state of sin</a> if I conflate the two. They’re also just floating-point approximations of real numbers, not the genuine article. The magic will happen anyway despite these indiscretions.<a href="#fnref1" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn1"><p>Technically, these are <a href="https://en.wikipedia.org/wiki/Pseudorandomness">pseudorandom numbers</a>; von Neumann might accuse me of living in a <a href="https://en.wikiquote.org/wiki/John_von_Neumann">state of sin</a> if I conflate the two. They’re also just floating-point approximations of real numbers, not the genuine article. That’s all okay; the magic will happen anyway despite these indiscretions.<a href="#fnref1" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
 </ol>
 </section></div></main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">

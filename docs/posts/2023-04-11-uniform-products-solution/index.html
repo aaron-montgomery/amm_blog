@@ -230,6 +230,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </tr>
 </tbody>
 </table>
+<p>This is the solution for the problem originally posed <a href="https://aaron-montgomery.github.io/amm_blog/posts/2023-04-12-uniform-products/">here</a>.</p>
 <section id="question" class="level1">
 <h1>Question</h1>
 <p>When we compute a product of many numbers that are each uniformly distributed on <span class="math inline">\([0, C]\)</span>, the product becomes very small when <span class="math inline">\(C = 1\)</span> and becomes very large when <span class="math inline">\(C = 10\)</span>. Where is the “cutoff” <span class="math inline">\(C\)</span> where the product exhibits a transition?</p>
@@ -304,7 +305,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <div class="cell-output cell-output-display">
 <div id="fig-rw" class="quarto-figure quarto-figure-center anchored">
 <figure class="figure">
-<p><img src="index_files/figure-html/fig-rw-output-1.png" width="760" height="515" class="figure-img"></p>
+<p><img src="index_files/figure-html/fig-rw-output-1.png" class="img-fluid figure-img"></p>
 <p></p><figcaption class="figure-caption">Figure&nbsp;1: Ten parallel runs of uniform products</figcaption><p></p>
 </figure>
 </div>
@@ -340,14 +341,14 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <span id="cb2-22"><a href="#cb2-22" aria-hidden="true" tabindex="-1"></a>plt.show()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 <div class="cell-output cell-output-display">
-<p><img src="index_files/figure-html/cell-3-output-1.png" width="760" height="515"></p>
+<p><img src="index_files/figure-html/cell-3-output-1.png" class="img-fluid"></p>
 </div>
 </div>
 <p>In this case, a little bit after 400K digits, the product got so close to 0 that Python could not longer distinguish it from 0 at all anymore. This ruins our ability to see what’s <em>really</em> happening here; the ideal version of this process cannot possibly be <em>equal</em> to zero, and if we were patient enough and unbound by numerical limitations, we’d see that graph lift back off and head upward again. In this case, restricting ourselves to a mere numerical lens means we miss out on something special.</p>
 <hr>
 <p>Compared to simulations, mathematical theory is still indispensable when it comes to things like critical values, corner cases, generalizations, and connections between seemingly disparate things. These places are exactly where you can expect to find some of the most important truths as well as some of the most beautiful surprises.</p>
 <p>And yet: numerical approaches and simulations do still hint at the wonderful things swimming just beneath the surface, even if they’re not quite enough to look at them directly. As always, using simulations as a sort of <a href="https://aaron-montgomery.github.io/amm_blog/posts/2022-07-27-ordered-objects/">mathematical laboratory</a> can be downright magical, but it’s the <em>beginning</em> of a story, not its end.</p>
-<p>PROVIDE LINK BACK TO POST</p>
+<p><a href="https://aaron-montgomery.github.io/amm_blog/posts/2023-04-12-uniform-products/">Back to problem</a></p>
 
 
 </section>
