@@ -1,0 +1,11 @@
+{
+  "hash": "b8094577bf53ef78c926ff8b3c6964e6",
+  "result": {
+    "markdown": "---\ntitle: \"Uniform Products\"\nformat:\n  html:\n    fig-width: 10\n    fig-height: 6\n    fig-align: 'center'\ndescription: \"A pocket-sized probability puzzle\"\nauthor: \"Aaron Montgomery\"\ndate: \"2023-04-10\"\ncategories: [counterintuitive, python-language]\nimage: \"mika-baumeister-Wpnoqo2plFA-unsplash.jpg\"\n---\n\n| ![](mika-baumeister-Wpnoqo2plFA-unsplash.jpg) |\n|:--:|\n| <font size = \"2\"> Photo by <a href=\"https://unsplash.com/@mbaumi?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText\">Mika Baumeister</a> on <a href=\"https://unsplash.com/photos/Wpnoqo2plFA?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText\">Unsplash</a> </font>|\n\n# Uniformly-distributed numbers\n\nLet's start with a refresher of uniform numbers: numbers that are uniformly-\ndistributed on an interval $[a, b]$ can assume any decimal value in that range\nwithout preference to any particular subinterval. They're the usual thing people\nmean when they talk about \"random numbers\". Here's a bit of Python code to \ngenerate five uniformly-distributed numbers on $[0, 1]$:[^1] \n\n\n\n::: {.cell execution_count=2}\n``` {.python .cell-code}\nfrom numpy.random import default_rng\nrng = default_rng()\n\nprint(rng.uniform(low=0, high=1, size=5))\n```\n\n::: {.cell-output .cell-output-stdout}\n```\n[0.39763174 0.65915304 0.58568506 0.60475324 0.94004794]\n```\n:::\n:::\n\n\nNote that these numbers are independent\nAnd here's a visualization of ten *thousand* numbers generated on that same\ninterval. \n\n**INSERT VISUALIZATION HERE**\n\nnarrative about product\n\n::: {.cell execution_count=3}\n``` {.python .cell-code}\nrng.uniform(low=0, high=10, size=10000).prod()\n```\n\n::: {.cell-output .cell-output-display execution_count=3}\n```\ninf\n```\n:::\n:::\n\n\n[Google Colab notebook](https://colab.research.google.com/drive/1b40ZqoKZuXeblvGGwSe68f25B5XxliCx?usp=sharing)\n\n\n[^1]: Technically, these are [pseudorandom numbers](https://en.wikipedia.org/wiki/Pseudorandomness); von Neumann might accuse me of living in a [state of sin](https://en.wikiquote.org/wiki/John_von_Neumann) if I conflate the two.\n\n",
+    "supporting": [
+      "index_files"
+    ],
+    "filters": [],
+    "includes": {}
+  }
+}

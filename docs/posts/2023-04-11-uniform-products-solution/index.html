@@ -7,7 +7,8 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 <meta name="author" content="Aaron Montgomery">
-<meta name="dcterms.date" content="2023-04-12">
+<meta name="dcterms.date" content="2023-04-11">
+<meta name="description" content="(Read the Problem post first!)">
 
 <title>Aaron M. Montgomery - Uniform Products: Solution</title>
 <style>
@@ -88,22 +89,22 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </style>
 
 
-<script src="../site_libs/quarto-nav/quarto-nav.js"></script>
-<script src="../site_libs/quarto-nav/headroom.min.js"></script>
-<script src="../site_libs/clipboard/clipboard.min.js"></script>
-<script src="../site_libs/quarto-search/autocomplete.umd.js"></script>
-<script src="../site_libs/quarto-search/fuse.min.js"></script>
-<script src="../site_libs/quarto-search/quarto-search.js"></script>
-<meta name="quarto:offset" content="../">
-<script src="../site_libs/quarto-html/quarto.js"></script>
-<script src="../site_libs/quarto-html/popper.min.js"></script>
-<script src="../site_libs/quarto-html/tippy.umd.min.js"></script>
-<script src="../site_libs/quarto-html/anchor.min.js"></script>
-<link href="../site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="../site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
-<script src="../site_libs/bootstrap/bootstrap.min.js"></script>
-<link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="../site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
+<script src="../../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../../site_libs/quarto-nav/headroom.min.js"></script>
+<script src="../../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../../site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="../../site_libs/quarto-search/fuse.min.js"></script>
+<script src="../../site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="../../">
+<script src="../../site_libs/quarto-html/quarto.js"></script>
+<script src="../../site_libs/quarto-html/popper.min.js"></script>
+<script src="../../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../../site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="../../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../../site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
@@ -126,7 +127,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 
   <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
 
-<link rel="stylesheet" href="../styles.css">
+<link rel="stylesheet" href="../../styles.css">
 </head>
 
 <body class="nav-fixed fullcontent">
@@ -136,7 +137,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
     <nav class="navbar navbar-expand-lg navbar-dark ">
       <div class="navbar-container container-fluid">
       <div class="navbar-brand-container">
-    <a class="navbar-brand" href="../index.html">
+    <a class="navbar-brand" href="../../index.html">
     <span class="navbar-title">Aaron M. Montgomery</span>
     </a>
   </div>
@@ -146,7 +147,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
           <div class="collapse navbar-collapse" id="navbarCollapse">
             <ul class="navbar-nav navbar-nav-scroll ms-auto">
   <li class="nav-item">
-    <a class="nav-link" href="../about.html">
+    <a class="nav-link" href="../../about.html">
  <span class="menu-text">About</span></a>
   </li>  
   <li class="nav-item compact">
@@ -166,54 +167,77 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
     </nav>
 </header>
 <!-- content -->
-<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
+<header id="title-block-header" class="quarto-title-block default page-columns page-full">
+  <div class="quarto-title-banner page-columns page-full">
+    <div class="quarto-title column-body">
+      <h1 class="title">Uniform Products: Solution</h1>
+                  <div>
+        <div class="description">
+          (Read the Problem post first!)
+        </div>
+      </div>
+                          <div class="quarto-categories">
+                <div class="quarto-category">counterintuitive</div>
+                <div class="quarto-category">python-language</div>
+                <div class="quarto-category">simulation</div>
+              </div>
+                  </div>
+  </div>
+    
+  
+  <div class="quarto-title-meta">
+
+      <div>
+      <div class="quarto-title-meta-heading">Author</div>
+      <div class="quarto-title-meta-contents">
+               <p>Aaron Montgomery </p>
+            </div>
+    </div>
+      
+      <div>
+      <div class="quarto-title-meta-heading">Published</div>
+      <div class="quarto-title-meta-contents">
+        <p class="date">April 11, 2023</p>
+      </div>
+    </div>
+    
+      
+    </div>
+    
+  
+  </header><div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
 <!-- sidebar -->
 <!-- margin-sidebar -->
     
 <!-- main -->
-<main class="content" id="quarto-document-content">
-
-<header id="title-block-header" class="quarto-title-block default">
-<div class="quarto-title">
-<h1 class="title">Uniform Products: Solution</h1>
-  <div class="quarto-categories">
-    <div class="quarto-category">counterintuitive</div>
-    <div class="quarto-category">python-language</div>
-    <div class="quarto-category">simulation</div>
-  </div>
-  </div>
+<main class="content quarto-banner-title-block" id="quarto-document-content">
 
 
 
-<div class="quarto-title-meta">
 
-    <div>
-    <div class="quarto-title-meta-heading">Author</div>
-    <div class="quarto-title-meta-contents">
-             <p>Aaron Montgomery </p>
-          </div>
-  </div>
-    
-    <div>
-    <div class="quarto-title-meta-heading">Published</div>
-    <div class="quarto-title-meta-contents">
-      <p class="date">April 12, 2023</p>
-    </div>
-  </div>
-  
-    
-  </div>
-  
-
-</header>
-
+<table class="table">
+<colgroup>
+<col style="width: 100%">
+</colgroup>
+<thead>
+<tr class="header">
+<th style="text-align: center;"><img src="random_walks.png" class="img-fluid"></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: center;"><font size="2"> Code to generate this graph can be found above <a href="#fig-rw">Figure&nbsp;1</a> </font></td>
+</tr>
+</tbody>
+</table>
 <section id="question" class="level1">
 <h1>Question</h1>
 <p>When we compute a product of many numbers that are each uniformly distributed on <span class="math inline">\([0, C]\)</span>, the product becomes very small when <span class="math inline">\(C = 1\)</span> and becomes very large when <span class="math inline">\(C = 10\)</span>. Where is the “cutoff” <span class="math inline">\(C\)</span> where the product exhibits a transition?</p>
 </section>
 <section id="answer" class="level1">
 <h1>Answer</h1>
-<p>It’s Euler’s number, <span class="math inline">\(e \approx 2.71828...\)</span> – yes, <em>that</em> <span class="math inline">\(e\)</span>. It has a habit of <a href="https://aaron-montgomery.github.io/amm_blog/posts/2022-07-27-ordered-objects/">doing this sort of thing</a>. Here’s an explanation, and we don’t have much choice here but to go heavy on the math here.</p>
+<p>It’s Euler’s number, <span class="math inline">\(e \approx 2.71828...\)</span> – yes, <em>that</em> <span class="math inline">\(e\)</span>. It has a habit of <a href="https://aaron-montgomery.github.io/amm_blog/posts/2022-07-27-ordered-objects/">doing this sort of thing</a>.</p>
+<p>This deserves an explanation, and we don’t have much choice here but to go heavy on the math here.</p>
 <section id="proof" class="level2">
 <h2 class="anchored" data-anchor-id="proof">Proof</h2>
 <p>Let’s formulate this mathematically: we want to know how the product <span class="math display">\[U_n = \prod_{k=1}^{n} X_k\]</span> behaves, where <span class="math inline">\(\{X_i\}\)</span> is a collection of independent, identically-distributed numbers that are all uniformly distributed on <span class="math inline">\([0, C]\)</span>. Products of random variables are somewhat obnoxious to work with; luckily, logarithms<a href="#fn1" class="footnote-ref" id="fnref1" role="doc-noteref"><sup>1</sup></a> will let us trade products for sums. <span class="math display">\[\log(U_n) = \log \left( \prod_{k=1}^{n} X_k \right) =
@@ -234,40 +258,95 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <p>Let’s back up a bit: since <span class="math inline">\(\log(U_n) = \sum \log(X_k)\)</span>, and we have specifically chosen a value of <span class="math inline">\(C\)</span> to force <span class="math inline">\(\mathbb E[\log(X_k)] = 0\)</span>, we can see that <span class="math inline">\(\log(U_n)\)</span> is an unbiased random walk (i.e.&nbsp;a sum whose increments all have mean 0). Moreover, these increments are pretty well-behaved. For instance, they have finite second moments:<a href="#fn2" class="footnote-ref" id="fnref2" role="doc-noteref"><sup>2</sup></a></p>
 <p><span class="math display">\[ \mathbb E \left[ \left(\log(X_k) \right)^2 \right] = \int_0^e \frac 1 e \cdot \log(x)^2 \, \textrm d x = \frac 1 e \left[ x(\log^2(x) - 2 \log(x) + 2) \right] \bigg|_0^e = 1\]</span></p>
 <p>Hence, the increments <span class="math inline">\(\log(X_k)\)</span> have mean <span class="math inline">\(0\)</span> and variance <span class="math inline">\(1\)</span>. This practically screams for the involvement of everybody’s favorite statistical workhorse: the <a href="https://en.wikipedia.org/wiki/Central_limit_theorem">Central Limit Theorem</a>. The CLT shows us that tells us that if we had scaled <span class="math inline">\(\log(U_n)\)</span> by <span class="math inline">\(\sqrt n\)</span> instead of by <span class="math inline">\(n\)</span>, then <span class="math inline">\(\frac{\log(U_n)}{\sqrt n}\)</span> would do something interesting – specifically, it would converge (in distribution) to the standard normal distribution. The <a href="https://en.wikipedia.org/wiki/Hewitt%E2%80%93Savage_zero%E2%80%93one_law">Hewitt-Savage 0-1 Law</a> implies that there are some values <span class="math inline">\(\phi_{\inf}, \phi_{\sup} \in [-\infty, \infty]\)</span> such that <span class="math inline">\(\limsup_n \log(U_n) = \phi_{\inf}\)</span> and <span class="math inline">\(\liminf_n \log(U_n) = \phi_{\sup}\)</span> almost surely; hence, <span class="math inline">\(\phi_{\inf} = -\infty\)</span> and <span class="math inline">\(\phi_{\sup} = \infty\)</span> (since anything else would force <span class="math inline">\(\log(U_n) / \sqrt n\)</span> to collapse to 0, which it doesn’t). This means that <span class="math inline">\(\log(U_n)\)</span> is a random walk that will get arbitrarily high and arbitrarily low, infinitely often, almost surely.</p>
-<p>Or, to summarize the end of that story in plain English: when <span class="math inline">\(C = e\)</span>, the product <span class="math inline">\(U_n\)</span> will be a random walk in the positive real number line; it will wander very high up, and will wander very close to <span class="math inline">\(0\)</span>, and will do both of those things many times.</p>
-<div class="cell" data-execution_count="1">
-<details>
-<summary>Show code</summary>
-<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
-<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> matplotlib.pyplot <span class="im">as</span> plt</span>
-<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> numpy.random <span class="im">import</span> default_rng</span>
-<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a>rng <span class="op">=</span> default_rng(seed<span class="op">=</span><span class="dv">6538</span>)</span>
-<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a>n <span class="op">=</span> <span class="bu">int</span>(<span class="fl">1e6</span>)</span>
-<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a><span class="co"># generate the random numbers</span></span>
-<span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a>uniform_nums <span class="op">=</span> rng.uniform(low<span class="op">=</span><span class="dv">0</span>, high<span class="op">=</span> <span class="fl">2.718281828459045</span>, size<span class="op">=</span>n)</span>
-<span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-11"><a href="#cb1-11" aria-hidden="true" tabindex="-1"></a><span class="co"># find the cumulative products:</span></span>
-<span id="cb1-12"><a href="#cb1-12" aria-hidden="true" tabindex="-1"></a><span class="co"># the kth element of the array is the product of the first k numbers</span></span>
-<span id="cb1-13"><a href="#cb1-13" aria-hidden="true" tabindex="-1"></a>sample_path <span class="op">=</span> np.cumprod(uniform_nums)</span>
-<span id="cb1-14"><a href="#cb1-14" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-15"><a href="#cb1-15" aria-hidden="true" tabindex="-1"></a>fig, ax <span class="op">=</span> plt.subplots()</span>
-<span id="cb1-16"><a href="#cb1-16" aria-hidden="true" tabindex="-1"></a>ax.plot(np.linspace(<span class="dv">1</span>,n,n), sample_path)</span>
-<span id="cb1-17"><a href="#cb1-17" aria-hidden="true" tabindex="-1"></a>ax.set_yscale(<span class="st">'log'</span>)</span>
-<span id="cb1-18"><a href="#cb1-18" aria-hidden="true" tabindex="-1"></a>plt.show()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</details>
-<div class="cell-output cell-output-display">
-<p><img src="uniform_numbers_solution_files/figure-html/cell-2-output-1.png" class="img-fluid"></p>
-</div>
-</div>
 </section>
 </section>
 <section id="simulations-versus-theory" class="level1">
 <h1>Simulations versus Theory</h1>
-<p>This problem is another great example of how valuable numerical simulations can be – and a stark reminder of their limitations. Thanks to simulations, it’s not too hard to see that the funny business occurs somewhat near <span class="math inline">\(e\)</span>; however, convincing yourself that the cutoff point is <em>exactly</em> <span class="math inline">\(e\)</span> (and not, say, 2.72 for some reason) is quite challenging. This is put into even sharper focus by observing that it’s not possible to simulate numbers using an upper bound of <em>exactly</em> <span class="math inline">\(e\)</span>, because computing systems generally only deal in floating-point decimal approximations of numbers. (But, of course, we can approximate it fairly well.)</p>
-<p>Even if you can convince yourself with simulations that the answer is <span class="math inline">\(e\)</span>, it’s quite hard to see the behavior <em>at</em> the critical value of <span class="math inline">\(e\)</span> through simulations alone. Compared to simulations, mathematical theory is still indispensable when it comes to things like critical values, corner cases, generalizations, and connections between seemingly disparate things. These places are exactly where you can expect to find some of the most important truths as well as some of the most beautiful surprises.</p>
-<p>And yet: some of the math above is reasonably challenging. The reason I like simulations as a pedagogical approach is that they invite someone to explore this phenomenon even if they’re not comfortable with stuff like the math above. Simulations might ask a mathematical explorer to <em>see</em> the beautiful phenomenon; hopefully, they’d then ask <em>why</em> it’s true.</p>
+<p>Let’s summarize the end of that story in plain English: when <span class="math inline">\(C = e\)</span>, the product <span class="math inline">\(U_n\)</span> will be a random walk in the positive real number line. As the number of digits increases, the product will wander very high up, and it will also wander very close to <span class="math inline">\(0\)</span>, and it will do both of those things many times. Here’s a visualization of ten copies of that process, placed on a log scale:</p>
+<div class="cell" data-execution_count="1">
+<details>
+<summary>Show code</summary>
+<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> math</span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> matplotlib.pyplot <span class="im">as</span> plt</span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> numpy.random <span class="im">import</span> default_rng</span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a>rng <span class="op">=</span> default_rng(seed<span class="op">=</span><span class="dv">6538</span>)</span>
+<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a><span class="co"># length of sample path, i.e. number of uniformly-distributed numbers within</span></span>
+<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a><span class="co"># each product group</span></span>
+<span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a>n <span class="op">=</span> <span class="bu">int</span>(<span class="fl">1e5</span>)</span>
+<span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-11"><a href="#cb1-11" aria-hidden="true" tabindex="-1"></a><span class="co"># generate ten sample paths of random walk, organized in columns</span></span>
+<span id="cb1-12"><a href="#cb1-12" aria-hidden="true" tabindex="-1"></a>uniform_nums <span class="op">=</span> rng.uniform(low<span class="op">=</span><span class="dv">0</span>, high<span class="op">=</span>math.e, size<span class="op">=</span><span class="dv">10</span><span class="op">*</span>n).reshape([n, <span class="dv">10</span>])</span>
+<span id="cb1-13"><a href="#cb1-13" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-14"><a href="#cb1-14" aria-hidden="true" tabindex="-1"></a><span class="co"># find the cumulative products within columns, starting from the top;</span></span>
+<span id="cb1-15"><a href="#cb1-15" aria-hidden="true" tabindex="-1"></a><span class="co"># the kth element in a given column is the product of the k numbers that lie on </span></span>
+<span id="cb1-16"><a href="#cb1-16" aria-hidden="true" tabindex="-1"></a><span class="co"># or above it</span></span>
+<span id="cb1-17"><a href="#cb1-17" aria-hidden="true" tabindex="-1"></a>sample_path <span class="op">=</span> uniform_nums.cumprod(axis <span class="op">=</span> <span class="dv">0</span>)</span>
+<span id="cb1-18"><a href="#cb1-18" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-19"><a href="#cb1-19" aria-hidden="true" tabindex="-1"></a>fig, ax <span class="op">=</span> plt.subplots()</span>
+<span id="cb1-20"><a href="#cb1-20" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-21"><a href="#cb1-21" aria-hidden="true" tabindex="-1"></a><span class="co"># plot each of the columns as separate paths</span></span>
+<span id="cb1-22"><a href="#cb1-22" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> i <span class="kw">in</span> <span class="bu">range</span>(<span class="dv">10</span>):</span>
+<span id="cb1-23"><a href="#cb1-23" aria-hidden="true" tabindex="-1"></a>    ax.plot(np.linspace(<span class="dv">1</span>,n,n), sample_path[:, i], alpha<span class="op">=</span><span class="fl">0.5</span>)</span>
+<span id="cb1-24"><a href="#cb1-24" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-25"><a href="#cb1-25" aria-hidden="true" tabindex="-1"></a>ax.set_yscale(<span class="st">'log'</span>)</span>
+<span id="cb1-26"><a href="#cb1-26" aria-hidden="true" tabindex="-1"></a>ax.set_title(<span class="st">'Cumulative Products: Random Numbers on [0, e]'</span>)</span>
+<span id="cb1-27"><a href="#cb1-27" aria-hidden="true" tabindex="-1"></a>ax.set_xlabel(<span class="st">'Number of terms in product'</span>)</span>
+<span id="cb1-28"><a href="#cb1-28" aria-hidden="true" tabindex="-1"></a>ax.set_ylabel(<span class="st">'Product'</span>)</span>
+<span id="cb1-29"><a href="#cb1-29" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-30"><a href="#cb1-30" aria-hidden="true" tabindex="-1"></a><span class="co"># to recreate the graph at the top of the page, uncomment the line below</span></span>
+<span id="cb1-31"><a href="#cb1-31" aria-hidden="true" tabindex="-1"></a><span class="co"># and comment out the ax.set_title() line above</span></span>
+<span id="cb1-32"><a href="#cb1-32" aria-hidden="true" tabindex="-1"></a><span class="co"># ax.set_axis_off()</span></span>
+<span id="cb1-33"><a href="#cb1-33" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-34"><a href="#cb1-34" aria-hidden="true" tabindex="-1"></a>plt.show()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+<div class="cell-output cell-output-display">
+<div id="fig-rw" class="quarto-figure quarto-figure-center anchored">
+<figure class="figure">
+<p><img src="index_files/figure-html/fig-rw-output-1.png" width="760" height="515" class="figure-img"></p>
+<p></p><figcaption class="figure-caption">Figure&nbsp;1: Ten parallel runs of uniform products</figcaption><p></p>
+</figure>
+</div>
+</div>
+</div>
+<p>This problem is another great example of how valuable numerical simulations can be – but it’s also a stark reminder of their limitations.</p>
+<p>Thanks to simulations, it’s not too hard to see that the funny business occurs somewhat near <span class="math inline">\(e\)</span>; however, convincing yourself that the cutoff point is <em>exactly</em> <span class="math inline">\(e\)</span> (and not, say, 2.720 for some reason) can be tricky as a matter of pure numerical tinkering.</p>
+<p>Even if you can convince yourself with simulations that the answer is <span class="math inline">\(e\)</span>, it’s quite hard to see what’s really going on <em>at</em> the critical value <span class="math inline">\(C=e\)</span> through simulations alone. If we try to expand one of the products in the graph above to more digits, we run into a problem:</p>
+<div class="cell" data-execution_count="2">
+<details>
+<summary>Show code</summary>
+<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>rng <span class="op">=</span> default_rng(seed<span class="op">=</span><span class="dv">6538</span>)</span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a><span class="co"># length of sample path, i.e. number of uniformly-distributed numbers within</span></span>
+<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a><span class="co"># each product group</span></span>
+<span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a>n <span class="op">=</span> <span class="bu">int</span>(<span class="fl">1e6</span>)</span>
+<span id="cb2-6"><a href="#cb2-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-7"><a href="#cb2-7" aria-hidden="true" tabindex="-1"></a>uniform_nums <span class="op">=</span> rng.uniform(low<span class="op">=</span><span class="dv">0</span>, high<span class="op">=</span>math.e, size<span class="op">=</span>n)</span>
+<span id="cb2-8"><a href="#cb2-8" aria-hidden="true" tabindex="-1"></a>sample_path <span class="op">=</span> uniform_nums.cumprod()</span>
+<span id="cb2-9"><a href="#cb2-9" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-10"><a href="#cb2-10" aria-hidden="true" tabindex="-1"></a>fig, ax <span class="op">=</span> plt.subplots()</span>
+<span id="cb2-11"><a href="#cb2-11" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-12"><a href="#cb2-12" aria-hidden="true" tabindex="-1"></a>ax.plot(np.linspace(<span class="dv">1</span>,n,n), sample_path)</span>
+<span id="cb2-13"><a href="#cb2-13" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-14"><a href="#cb2-14" aria-hidden="true" tabindex="-1"></a><span class="co"># reduce number of ticks on x-axis to avoid</span></span>
+<span id="cb2-15"><a href="#cb2-15" aria-hidden="true" tabindex="-1"></a>ax.xaxis.set_major_locator(plt.MaxNLocator(<span class="dv">3</span>))</span>
+<span id="cb2-16"><a href="#cb2-16" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-17"><a href="#cb2-17" aria-hidden="true" tabindex="-1"></a>ax.set_yscale(<span class="st">'log'</span>)</span>
+<span id="cb2-18"><a href="#cb2-18" aria-hidden="true" tabindex="-1"></a>ax.set_title(<span class="st">'Cumulative Products: Random Numbers on [0, e]'</span>)</span>
+<span id="cb2-19"><a href="#cb2-19" aria-hidden="true" tabindex="-1"></a>ax.set_xlabel(<span class="st">'Number of terms in product'</span>)</span>
+<span id="cb2-20"><a href="#cb2-20" aria-hidden="true" tabindex="-1"></a>ax.set_ylabel(<span class="st">'Product'</span>)</span>
+<span id="cb2-21"><a href="#cb2-21" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-22"><a href="#cb2-22" aria-hidden="true" tabindex="-1"></a>plt.show()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+<div class="cell-output cell-output-display">
+<p><img src="index_files/figure-html/cell-3-output-1.png" width="760" height="515"></p>
+</div>
+</div>
+<p>In this case, a little bit after 400K digits, the product got so close to 0 that Python could not longer distinguish it from 0 at all anymore. This ruins our ability to see what’s <em>really</em> happening here; the ideal version of this process cannot possibly be <em>equal</em> to zero, and if we were patient enough and unbound by numerical limitations, we’d see that graph lift back off and head upward again. In this case, restricting ourselves to a mere numerical lens means we miss out on something special.</p>
+<hr>
+<p>Compared to simulations, mathematical theory is still indispensable when it comes to things like critical values, corner cases, generalizations, and connections between seemingly disparate things. These places are exactly where you can expect to find some of the most important truths as well as some of the most beautiful surprises.</p>
+<p>And yet: numerical approaches and simulations do still hint at the wonderful things swimming just beneath the surface, even if they’re not quite enough to look at them directly. As always, using simulations as a sort of <a href="https://aaron-montgomery.github.io/amm_blog/posts/2022-07-27-ordered-objects/">mathematical laboratory</a> can be downright magical, but it’s the <em>beginning</em> of a story, not its end.</p>
 <p>PROVIDE LINK BACK TO POST</p>
 
 
