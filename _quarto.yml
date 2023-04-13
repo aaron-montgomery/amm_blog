@@ -6,7 +6,10 @@ website:
   title: "Aaron M. Montgomery"
   navbar:
     right:
-      - about.qmd
+      - text: Blog home
+        href: index.qmd
+      - text: About
+        href: about.qmd
       - icon: github
         href: https://github.com/aaron-montgomery
       - icon: linkedin
