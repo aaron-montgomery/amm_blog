@@ -6,7 +6,6 @@ format:
     fig-height: 6
     fig-align: 'center'
 description: "The waiting (time) is the hardest part"
-author: "Aaron Montgomery"
 date: "2022-08-10"
 categories: [simulation, penneys-game, counterintuitive, r-language]
 image: "chris-briggs-VK7jXtOtEuM-unsplash.jpg"

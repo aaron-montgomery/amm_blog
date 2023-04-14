@@ -6,7 +6,6 @@ format:
     fig-height: 6
     fig-align: 'center'
 description: "(Read the Problem post first!)"
-author: "Aaron Montgomery"
 date: "2023-04-11"
 categories: [counterintuitive, python-language, simulation]
 ---

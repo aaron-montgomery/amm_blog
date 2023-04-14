@@ -6,7 +6,6 @@ format:
     fig-height: 6
     fig-align: 'center'
 description: "Examining the role of AI tools in the classroom"
-author: "Aaron Montgomery"
 date: "2023-01-30"
 categories: [teaching, ai, chatgpt]
 image: "robot_reading.jpg"

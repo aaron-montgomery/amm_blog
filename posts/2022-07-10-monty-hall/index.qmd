@@ -6,7 +6,6 @@ format:
     fig-height: 6
     fig-align: 'center'
 description: "Monty Hall meets Monte Carlo"
-author: "Aaron Montgomery"
 date: "2022-07-14"
 categories: [simulation, monte-carlo, counterintuitive, r-language]
 image: "three_doors.jpg"

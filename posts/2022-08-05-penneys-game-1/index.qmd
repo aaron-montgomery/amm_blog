@@ -6,7 +6,6 @@ format:
     fig-height: 6
     fig-align: 'center'
 description: "A naturally-occurring rock-paper-scissors"
-author: "Aaron Montgomery"
 date: "2022-08-05"
 categories: [simulation, penneys-game, counterintuitive, r-language]
 image: "pile_of_pennies.jpg"

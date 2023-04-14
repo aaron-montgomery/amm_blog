@@ -6,17 +6,17 @@ website:
   title: "Aaron M. Montgomery"
   navbar:
     right:
-      - text: Blog home
+      - text: Home
         href: index.qmd
       - text: About
         href: about.qmd
       - icon: github
         href: https://github.com/aaron-montgomery
       - icon: linkedin
-        href: https://www.linkedin.com/in/aaron-montgomery-6b17421b1/        
+        href: https://www.linkedin.com/in/aaron-montgomery-6b17421b1/
 format:
   html:
-    theme: cosmo
+    theme: flatly
     css: styles.css
 
 

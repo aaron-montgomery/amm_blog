@@ -6,7 +6,6 @@ format:
     fig-height: 6
     fig-align: 'center'
 description: "A pocket-sized probability puzzle"
-author: "Aaron Montgomery"
 date: "2023-04-12"
 categories: [counterintuitive, python-language]
 image: "mika-baumeister-Wpnoqo2plFA-unsplash.jpg"

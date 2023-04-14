@@ -1,5 +1,4 @@
 ---
-title: "Blog"
 listing:
   contents: posts
   sort: "date desc"
@@ -11,8 +10,8 @@ page-layout: full
 title-block-banner: true
 ---
 
-This blog is an assorted collection of notes on probability, statistics,
-data, and coding.
+This blog is an assorted collection of notes on probability, statistics, data,
+and coding.
 
 ---
 

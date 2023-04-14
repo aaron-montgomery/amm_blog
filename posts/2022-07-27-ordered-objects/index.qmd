@@ -6,7 +6,6 @@ format:
     fig-height: 6
     fig-align: 'center'
 description: "A coding problem brings an uninvited famous mathematical guest"
-author: "Aaron Montgomery"
 date: "2022-07-27"
 categories: [simulation, eulers-number, counterintuitive, r-language]
 image: "letters.jpg"

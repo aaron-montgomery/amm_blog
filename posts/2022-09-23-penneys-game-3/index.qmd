@@ -6,7 +6,6 @@ format:
     fig-height: 6
     fig-align: 'center'
 description: "The graveyard of reasonable conjectures"
-author: "Aaron Montgomery"
 date: "2022-09-23"
 categories: [simulation, penneys-game, counterintuitive, r-language]
 image: "pennies_hex.jpg"
