@@ -1,6 +1,6 @@
 ---
 title: "About"
-image: montgomery.jpg
+image: amm_headshot_2.jpg
 about:
   template: solana
   links:
